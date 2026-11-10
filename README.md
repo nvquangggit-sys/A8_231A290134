@@ -25,11 +25,28 @@ Bài thực hành INT4211 – Lập trình trên các thiết bị di động, L
 ## Build
 
 ```bash
-gradle assembleDebug
+./gradlew assembleDebug            # Windows: gradlew.bat assembleDebug
 # hoặc mở project bằng Android Studio và bấm Run
 ```
 
 APK: `app/build/outputs/apk/debug/app-debug.apk`
+
+Yêu cầu: JDK 17+ (đã kiểm thử với JDK 25 của Android Studio JBR), Android SDK 36.
+
+## Cấu trúc
+
+```
+app/src/main/java/vn/edu/vhu/ltdd/a8fragment/
+├── MainActivity.java          # Activity duy nhất, điều hướng tab
+├── HomeFragment.java          # Tab Trang chủ + log vòng đời
+├── NewsListFragment.java      # Danh sách tin, nhận Fragment Result
+├── NewsDetailFragment.java    # Chi tiết, newInstance + arguments
+├── ProfileFragment.java       # Tab Cá nhân
+└── NewsViewModel.java         # NC2: ViewModel phạm vi Activity
+app/src/main/res/layout/            # Bố cục điện thoại (1 khung)
+app/src/main/res/layout-sw600dp/    # NC1: master–detail cho tablet
+docs/                               # 14 ảnh chụp + 3 tệp Logcat
+```
 
 ## Kịch bản kiểm thử
 
@@ -43,4 +60,16 @@ APK: `app/build/outputs/apk/debug/app-debug.apk`
 
 ## Minh chứng
 
-Ảnh chụp và Logcat nằm trong `docs/`. Video demo: `A8_231A290134_demo.mp4` (45 giây).
+Ảnh chụp và Logcat nằm trong `docs/`:
+
+| Thư mục | Nội dung |
+| --- | --- |
+| `docs/screenshots/` | 9 ảnh Pixel 6 (trang chủ, tin tức, chi tiết, back, đã đọc, đếm tin, cá nhân, xoay ngang, thoát app) + 4 ảnh Pixel Tablet + ảnh Logcat |
+| `docs/logs/` | `log_launch.txt`, `log_tabs.txt` (thứ tự callback khi đổi tab), `log_rotate.txt` (3 lần xoay → 3 lần `onCreateView`) |
+
+Video demo 45 giây được nộp kèm bài (không đưa vào repo để tránh phình dung lượng).
+
+## Báo cáo
+
+Báo cáo Word đầy đủ (bảng vòng đời, 7 kịch bản kiểm thử, 3 câu phân tích, NC1 + NC2, 5 câu ôn tập)
+được nộp kèm bài dưới tên `BaoCao_LabA8_231A290134.docx`.
