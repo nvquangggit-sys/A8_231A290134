@@ -1,0 +1,8 @@
+﻿11-10 12:03:16.643 D/A8_231A290134( 5305): onCreate â€“ twoPane = false
+11-10 12:03:16.646 D/A8_231A290134( 5305): Chuyá»ƒn tab sang: HomeFragment
+11-10 12:03:16.656 D/A8_231A290134/Home( 5305): onAttach â€“ Ä‘Ă£ gáº¯n vĂ o Activity
+11-10 12:03:16.657 D/A8_231A290134/Home( 5305): onCreate â€“ táº¡o Fragment (chÆ°a cĂ³ View)
+11-10 12:03:16.657 D/A8_231A290134/Home( 5305): onCreateView â€“ táº¡o cĂ¢y View
+11-10 12:03:16.663 D/A8_231A290134/Home( 5305): onViewCreated â€“ Ă¡nh xáº¡ View
+11-10 12:03:16.687 D/A8_231A290134/Home( 5305): onStart â€“ Fragment hiá»‡n ra
+11-10 12:03:16.693 D/A8_231A290134/Home( 5305): onResume â€“ nháº­n thao tĂ¡c

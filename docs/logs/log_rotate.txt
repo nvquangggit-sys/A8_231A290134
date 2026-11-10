@@ -1,0 +1,9 @@
+﻿11-10 12:04:39.058 D/A8_231A290134/Detail( 5443): onDestroyView â€“ View bá»‹ há»§y
+11-10 12:04:39.194 D/A8_231A290134( 5443): onCreate â€“ twoPane = false
+11-10 12:04:39.196 D/A8_231A290134/Detail( 5443): onCreateView â€“ táº¡o cĂ¢y View
+11-10 12:04:40.348 D/A8_231A290134/Detail( 5443): onDestroyView â€“ View bá»‹ há»§y
+11-10 12:04:40.484 D/A8_231A290134( 5443): onCreate â€“ twoPane = false
+11-10 12:04:40.487 D/A8_231A290134/Detail( 5443): onCreateView â€“ táº¡o cĂ¢y View
+11-10 12:04:41.589 D/A8_231A290134/Detail( 5443): onDestroyView â€“ View bá»‹ há»§y
+11-10 12:04:41.755 D/A8_231A290134( 5443): onCreate â€“ twoPane = false
+11-10 12:04:41.759 D/A8_231A290134/Detail( 5443): onCreateView â€“ táº¡o cĂ¢y View
