@@ -67,7 +67,8 @@ docs/                               # 15 ảnh chụp + 3 tệp Logcat
 | `docs/screenshots/` | 9 ảnh Pixel 6 (trang chủ, tin tức, chi tiết, back, đã đọc, đếm tin, cá nhân, xoay ngang, thoát app) + 5 ảnh Pixel Tablet (trang chủ, danh sách, chi tiết, Back, đã đọc) + ảnh Logcat |
 | `docs/logs/` | `log_launch.txt`, `log_tabs.txt` (thứ tự callback khi đổi tab), `log_rotate.txt` (3 lần xoay → 3 lần `onCreateView`) |
 
-Video demo 42 giây được nộp kèm bài (không đưa vào repo để tránh phình dung lượng).
+Video demo 77 giây được nộp kèm bài (không đưa vào repo để tránh phình dung lượng), ghi liên tục:
+chuyển tab → mở tin → Back → đánh dấu đã đọc → kiểm tra lại ở tab Trang chủ và Cá nhân.
 
 ## Báo cáo
 
