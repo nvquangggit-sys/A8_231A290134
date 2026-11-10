@@ -24,11 +24,28 @@
             android:layout_height="match_parent"
             android:background="#DDDDDD" />
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/detailContainer"
+        <FrameLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="6" />
+            android:layout_weight="6">
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/detailContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <!-- Hiện khi khung phải còn trống; MainActivity ẩn đi khi có Fragment chi tiết. -->
+            <TextView
+                android:id="@+id/tvDetailPlaceholder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="24dp"
+                android:text="@string/detail_placeholder"
+                android:textColor="#8A94A0"
+                android:textSize="16sp" />
+        </FrameLayout>
     </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

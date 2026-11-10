@@ -13,6 +13,7 @@
     <string name="list_none_read">Chưa đọc tin nào.</string>
     <string name="list_last_read">Đã đọc: %1$s</string>
     <string name="detail_mark_read">Đánh dấu đã đọc và quay lại</string>
+    <string name="detail_placeholder">Chọn một tin ở danh sách bên trái để xem chi tiết</string>
 
     <string name="profile_mssv">MSSV: %1$s</string>
     <string name="profile_last_read">Tin đọc gần nhất: %1$s</string>

@@ -1,15 +1,15 @@
-﻿11-10 12:03:21.818 D/A8_231A290134( 5305): Chuyá»ƒn tab sang: NewsListFragment
-11-10 12:03:21.956 D/A8_231A290134/Home( 5305): onPause â€“ bá»‹ che
-11-10 12:03:21.956 D/A8_231A290134/Home( 5305): onStop â€“ khĂ´ng cĂ²n hiá»ƒn thá»‹
-11-10 12:03:21.957 D/A8_231A290134/List( 5305): onCreateView â€“ táº¡o cĂ¢y View
-11-10 12:03:21.975 D/A8_231A290134/List( 5305): onViewCreated â€“ Ă¡nh xáº¡ View
-11-10 12:03:21.993 D/A8_231A290134/Home( 5305): onDestroyView â€“ View bá»‹ há»§y (Fragment cĂ³ thá»ƒ váº«n cĂ²n sá»‘ng)
-11-10 12:03:21.995 D/A8_231A290134/Home( 5305): onDestroy â€“ Fragment bá»‹ há»§y
-11-10 12:03:21.995 D/A8_231A290134/Home( 5305): onDetach â€“ gá»¡ khá»i Activity
-11-10 12:03:23.016 D/A8_231A290134( 5305): Chuyá»ƒn tab sang: HomeFragment
-11-10 12:03:23.063 D/A8_231A290134/Home( 5305): onAttach â€“ Ä‘Ă£ gáº¯n vĂ o Activity
-11-10 12:03:23.064 D/A8_231A290134/Home( 5305): onCreate â€“ táº¡o Fragment (chÆ°a cĂ³ View)
-11-10 12:03:23.065 D/A8_231A290134/Home( 5305): onCreateView â€“ táº¡o cĂ¢y View
-11-10 12:03:23.072 D/A8_231A290134/Home( 5305): onViewCreated â€“ Ă¡nh xáº¡ View
-11-10 12:03:23.074 D/A8_231A290134/Home( 5305): onStart â€“ Fragment hiá»‡n ra
-11-10 12:03:23.079 D/A8_231A290134/Home( 5305): onResume â€“ nháº­n thao tĂ¡c
+11-10 12:03:21.818 D/A8_231A290134( 5305): Chuyển tab sang: NewsListFragment
+11-10 12:03:21.956 D/A8_231A290134/Home( 5305): onPause – bị che
+11-10 12:03:21.956 D/A8_231A290134/Home( 5305): onStop – không còn hiển thị
+11-10 12:03:21.957 D/A8_231A290134/List( 5305): onCreateView – tạo cây View
+11-10 12:03:21.975 D/A8_231A290134/List( 5305): onViewCreated – ánh xạ View
+11-10 12:03:21.993 D/A8_231A290134/Home( 5305): onDestroyView – View bị hủy (Fragment có thể vẫn còn sống)
+11-10 12:03:21.995 D/A8_231A290134/Home( 5305): onDestroy – Fragment bị hủy
+11-10 12:03:21.995 D/A8_231A290134/Home( 5305): onDetach – gỡ khỏi Activity
+11-10 12:03:23.016 D/A8_231A290134( 5305): Chuyển tab sang: HomeFragment
+11-10 12:03:23.063 D/A8_231A290134/Home( 5305): onAttach – đã gắn vào Activity
+11-10 12:03:23.064 D/A8_231A290134/Home( 5305): onCreate – tạo Fragment (chưa có View)
+11-10 12:03:23.065 D/A8_231A290134/Home( 5305): onCreateView – tạo cây View
+11-10 12:03:23.072 D/A8_231A290134/Home( 5305): onViewCreated – ánh xạ View
+11-10 12:03:23.074 D/A8_231A290134/Home( 5305): onStart – Fragment hiện ra
+11-10 12:03:23.079 D/A8_231A290134/Home( 5305): onResume – nhận thao tác

@@ -2,13 +2,18 @@ package vn.edu.vhu.ltdd.a8fragment;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.OnBackPressedCallback;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -18,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
 
     /** true khi đang chạy trên màn hình lớn (layout-sw600dp có detailContainer). */
     private boolean twoPane;
+
+    /** Chỉ layout-sw600dp mới có: dòng gợi ý khi khung chi tiết còn trống. */
+    private View detailPlaceholder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +40,46 @@ public class MainActivity extends AppCompatActivity {
 
         // NC1: chỉ layout-sw600dp mới có detailContainer.
         twoPane = findViewById(R.id.detailContainer) != null;
+        detailPlaceholder = findViewById(R.id.tvDetailPlaceholder);
         Log.d(TAG, "onCreate – twoPane = " + twoPane);
+
+        if (twoPane) {
+            // Hiện lại dòng gợi ý mỗi khi khung phải trống (đổi tab, xoay màn hình, đóng chi tiết).
+            getSupportFragmentManager().registerFragmentLifecycleCallbacks(
+                    new FragmentManager.FragmentLifecycleCallbacks() {
+                        @Override
+                        public void onFragmentViewCreated(@NonNull FragmentManager fm, @NonNull Fragment f,
+                                                          @NonNull View v, @Nullable Bundle saved) {
+                            if (f instanceof NewsDetailFragment) {
+                                hienGoiY(false);
+                            }
+                        }
+
+                        @Override
+                        public void onFragmentViewDestroyed(@NonNull FragmentManager fm, @NonNull Fragment f) {
+                            if (f instanceof NewsDetailFragment) {
+                                hienGoiY(true);
+                            }
+                        }
+                    }, false);
+
+            // Tablet không dùng back stack cho khung phải, nên tự đóng chi tiết trước khi thoát app.
+            getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+                @Override
+                public void handleOnBackPressed() {
+                    Fragment detail = getSupportFragmentManager().findFragmentById(R.id.detailContainer);
+                    if (detail != null) {
+                        Log.d(TAG, "Back – đóng khung chi tiết, giữ nguyên danh sách");
+                        getSupportFragmentManager().beginTransaction().remove(detail).commit();
+                        return;
+                    }
+                    // Không còn gì để đóng: nhường Back cho hệ thống (đóng Activity).
+                    setEnabled(false);
+                    getOnBackPressedDispatcher().onBackPressed();
+                    setEnabled(true);
+                }
+            });
+        }
 
         BottomNavigationView bottomNav = findViewById(R.id.bottomNav);
         bottomNav.setOnItemSelectedListener(item -> {
@@ -56,6 +103,13 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean isTwoPane() {
         return twoPane;
+    }
+
+    /** Bật/tắt dòng gợi ý ở khung chi tiết (tablet). */
+    private void hienGoiY(boolean hien) {
+        if (detailPlaceholder != null) {
+            detailPlaceholder.setVisibility(hien ? View.VISIBLE : View.GONE);
+        }
     }
 
     /** Thay Fragment đang hiển thị trong khung chứa. */

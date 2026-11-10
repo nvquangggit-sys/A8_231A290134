@@ -9,7 +9,7 @@ Bài thực hành INT4211 – Lập trình trên các thiết bị di động, L
 - Danh sách tin mở màn hình chi tiết bằng `replace()` + `addToBackStack("chi_tiet")`.
 - Truyền dữ liệu vào Fragment bằng mẫu `newInstance` + `Bundle arguments`.
 - Trả kết quả ngược bằng Fragment Result API (`news_request`).
-- **NC1:** bố cục master–detail cho tablet bằng `res/layout-sw600dp/activity_main.xml`.
+- **NC1:** bố cục master–detail cho tablet bằng `res/layout-sw600dp/activity_main.xml`; khung phải có dòng gợi ý khi trống và Back chỉ đóng chi tiết, giữ nguyên danh sách.
 - **NC2:** giữ trạng thái đã đọc giữa các tab bằng `ViewModel` phạm vi Activity.
 
 ## Cấu hình
@@ -31,7 +31,7 @@ Bài thực hành INT4211 – Lập trình trên các thiết bị di động, L
 
 APK: `app/build/outputs/apk/debug/app-debug.apk`
 
-Yêu cầu: JDK 17+ (đã kiểm thử với JDK 25 của Android Studio JBR), Android SDK 36.
+Yêu cầu: JDK đi kèm Android Studio (đã kiểm thử với JDK 25 của Android Studio JBR), Android SDK 36.
 
 ## Cấu trúc
 
@@ -45,7 +45,7 @@ app/src/main/java/vn/edu/vhu/ltdd/a8fragment/
 └── NewsViewModel.java         # NC2: ViewModel phạm vi Activity
 app/src/main/res/layout/            # Bố cục điện thoại (1 khung)
 app/src/main/res/layout-sw600dp/    # NC1: master–detail cho tablet
-docs/                               # 14 ảnh chụp + 3 tệp Logcat
+docs/                               # 15 ảnh chụp + 3 tệp Logcat
 ```
 
 ## Kịch bản kiểm thử
@@ -64,10 +64,10 @@ docs/                               # 14 ảnh chụp + 3 tệp Logcat
 
 | Thư mục | Nội dung |
 | --- | --- |
-| `docs/screenshots/` | 9 ảnh Pixel 6 (trang chủ, tin tức, chi tiết, back, đã đọc, đếm tin, cá nhân, xoay ngang, thoát app) + 4 ảnh Pixel Tablet + ảnh Logcat |
+| `docs/screenshots/` | 9 ảnh Pixel 6 (trang chủ, tin tức, chi tiết, back, đã đọc, đếm tin, cá nhân, xoay ngang, thoát app) + 5 ảnh Pixel Tablet (trang chủ, danh sách, chi tiết, Back, đã đọc) + ảnh Logcat |
 | `docs/logs/` | `log_launch.txt`, `log_tabs.txt` (thứ tự callback khi đổi tab), `log_rotate.txt` (3 lần xoay → 3 lần `onCreateView`) |
 
-Video demo 45 giây được nộp kèm bài (không đưa vào repo để tránh phình dung lượng).
+Video demo 42 giây được nộp kèm bài (không đưa vào repo để tránh phình dung lượng).
 
 ## Báo cáo
 
